@@ -36,10 +36,6 @@ interface Genre {
   name: string;
 }
 
-interface Genres {
-  genres: Genre[];
-}
-
 const HomeScreen = () => {
   const [query, setQuery] = useState("");
   const fetcher = (url: string) => fetch(url).then((res) => res.json());
@@ -50,7 +46,7 @@ const HomeScreen = () => {
     fetcher
   );
 
-  const { data: genres, error: genresError } = useSWR<Genres>(
+  const { data: genres, error: genresError } = useSWR(
     "https://api.themoviedb.org/3/genre/movie/list?api_key=d432b933ecc6d5642d8d2befbc40c7ac&language=en-US",
     fetcher
   );
@@ -61,6 +57,7 @@ const HomeScreen = () => {
       <TextInput
         style={styles.input}
         placeholder="Search..."
+        placeholderTextColor="#999"
         value={query}
         onChangeText={setQuery}
       />
@@ -73,7 +70,7 @@ const HomeScreen = () => {
             title: movie.original_title,
             genres: movie.genre_ids.map(
               (genreId) =>
-                genres?.genres.find((genre) => genre.id === genreId).name
+                genres.genres.find((genre: Genre) => genre.id === genreId).name
             ),
             imageUri: `https://image.tmdb.org/t/p/w500/${movie.backdrop_path}`,
           }))}
