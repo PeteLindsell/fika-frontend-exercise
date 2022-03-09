@@ -26,7 +26,7 @@ yarn start
 4. Add tests
 5. Extracting theming
 
-![image description](docs/screen-shot.png)
+<img src="docs/screen-shot.png" width="300" >
 
 The objective of this exercise is to fork this repository and create a `react-native` app called 'FikaSearch'. This app will comprise of a listing page of films and the names of their genres. The page should also allow the user to search the films by typing into a text field.
 
