@@ -1,15 +1,20 @@
 import React from "react";
 import { View, StyleSheet, Text, Image } from "react-native";
 
-interface MovieItemProps {
+import Tags from "./Tags";
+
+export interface MovieItemProps {
+  genres: string[];
   title: string;
   imageUri: string;
+  id: string;
 }
 
-const MovieItem = ({ title, imageUri }: MovieItemProps) => (
+const MovieItem = ({ title, imageUri, genres }: MovieItemProps) => (
   <View style={styles.item}>
     <View style={styles.container}>
       <Text style={styles.title}>{title}</Text>
+      <Tags tags={genres} />
     </View>
     <Image style={styles.image} source={{ uri: imageUri }} />
   </View>
@@ -21,7 +26,7 @@ const styles = StyleSheet.create({
     margin: 10,
     justifyContent: "space-between",
     flexDirection: "row",
-    borderRadius: 4,
+    borderRadius: 5,
   },
   container: {
     padding: 10,
@@ -30,15 +35,13 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 22,
     color: "#fff",
-  },
-  body: {
-    fontSize: 14,
-    color: "#fff",
-    backgroundColor: "#333",
+    marginBottom: 10,
   },
   image: {
-    width: 200,
-    height: 200,
+    width: 150,
+    height: 150,
+    borderTopRightRadius: 5,
+    borderBottomRightRadius: 5,
   },
 });
 
