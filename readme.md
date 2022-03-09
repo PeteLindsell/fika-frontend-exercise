@@ -2,7 +2,7 @@
 
 ## Getting started
 
-This app is bootstrapped with expo to get start
+This app is bootstrapped with expo, to get start:
 
 1. Install the dependencies
 
