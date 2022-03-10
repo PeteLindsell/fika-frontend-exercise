@@ -2,7 +2,7 @@
 
 ## Getting started
 
-This app is bootstrapped with expo, to get start:
+This app is bootstrapped with expo, to get started:
 
 1. Install the dependencies
 
@@ -16,15 +16,16 @@ yarn
 yarn start
 ```
 
-3. Follow instruction to start on web, device, emulator
+3. Follow instruction to start on web, device or emulator
 
 ## TODO
 
 1. Extract search to its own component
-2. Extract queries to hooks
-3. Use auto generated types from endpoint if available
-4. Add tests
-5. Extracting theming
+2. Debounce search requests
+3. Extract queries to hooks
+4. Use auto generated types from endpoint if available
+5. Add tests
+6. Extracting theming
 
 <img src="docs/screen-shot.png" width="300" >
 
